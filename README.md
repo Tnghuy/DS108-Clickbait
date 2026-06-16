@@ -127,20 +127,20 @@ Quy trình kỹ nghệ dữ liệu từ lúc thu thập tin tức thô cho đế
 ```mermaid
 flowchart TD
     subgraph Thu thập & Lọc dữ liệu thô
-        P1[Phase 1: RSS & Sitemap Crawler] -->|Dữ liệu thô: 27.868 bản ghi| P2[Phase 2: Text Extractor trafilatura]
-        P2 -->|Lọc URL: 26.938 bản ghi| P3[Phase 3: Quality Checker]
+        P1[Phase 1: RSS & Sitemap Crawler] -->|Dữ liệu thô: 15.000 bản ghi| P2[Phase 2: Text Extractor trafilatura]
+        P2 -->|Lọc URL: 14.248 bản ghi| P3[Phase 3: Quality Checker]
     end
     subgraph Khử trùng lặp & Chọn mẫu
-        P3 -->|Ngưỡng điểm chất lượng >= 4| P4[Phase 4: Exact Duplicate Remover]
-        P4 -->|Lọc trùng URL| P5[Phase 5: Semantic Duplicate Remover MiniLM]
+        P3 -->|Ngưỡng điểm chất lượng >= 4: 14.149 bản ghi| P4[Phase 4: Exact Duplicate Remover]
+        P4 -->|Lọc trùng URL: 13.769 bản ghi| P5[Phase 5: Semantic Duplicate Remover MiniLM]
     end
     subgraph Gán nhãn đa tầng & Kiểm duyệt
-        P5 -->|Khử trùng ngữ nghĩa: 22.045 bản ghi| P6[Phase 6: Random Stratified Sampling 6.000 mẫu]
+        P5 -->|Khử trùng ngữ nghĩa: 13.760 bản ghi| P6[Phase 6: Random Stratified Sampling 6.000 mẫu]
         P6 --> P7[Phase 7: Ensemble LLM Annotation]
         P7 --> P8[Phase 8: Human CLI Reviewer]
     end
     subgraph Đánh giá & Xuất bản
-        P8 -->|Hợp nhất dữ liệu Gold Standard| P9[Phase 9: Stratified Temporal Split & Parquet/CSV Export]
+        P8 -->|Hợp nhất dữ liệu Gold Standard: 6.000 mẫu| P9[Phase 9: Stratified Temporal Split & Parquet/CSV Export]
     end
     style P8 fill:#f9f,stroke:#333,stroke-width:2px
 ```
