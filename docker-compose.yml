@@ -1,0 +1,53 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: clickbait-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_storage:/root/.ollama
+    networks:
+      - clickbait-network
+    restart: unless-stopped
+
+  ollama-pull:
+    image: ollama/ollama:latest
+    container_name: clickbait-ollama-pull
+    depends_on:
+      - ollama
+    networks:
+      - clickbait-network
+    entrypoint: >
+      sh -c "
+      echo 'Waiting for Ollama service to start...' &&
+      sleep 5 &&
+      echo 'Pulling Qwen 2.5 3B model...' &&
+      ollama pull qwen2.5:3b-instruct-q4_K_M &&
+      echo 'Pulling Gemma 2 2B model...' &&
+      ollama pull gemma2:2b-instruct-q4_K_M &&
+      echo 'All models pulled successfully!'"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clickbait-pipeline-app
+    ports:
+      - "8888:8888"
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - APP_ENV=dev
+    volumes:
+      - .:/app
+    depends_on:
+      - ollama
+    networks:
+      - clickbait-network
+    command: python src/evaluation/run_tests.py
+
+networks:
+  clickbait-network:
+    driver: bridge
+
+volumes:
+  ollama_storage:

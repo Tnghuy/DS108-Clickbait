@@ -1,0 +1,13 @@
+{
+  "train_size": 4212,
+  "train_clickbait_count": 1046,
+  "train_clickbait_rate": 0.248338081671415,
+  "validation_size": 894,
+  "validation_clickbait_count": 221,
+  "validation_clickbait_rate": 0.24720357941834453,
+  "test_size": 894,
+  "test_clickbait_count": 221,
+  "test_clickbait_rate": 0.24720357941834453,
+  "drift": 0.001134502253070463,
+  "drift_warning": false
+}

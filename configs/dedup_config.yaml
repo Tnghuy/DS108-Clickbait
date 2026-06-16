@@ -1,0 +1,59 @@
+# Deduplication configuration
+# Using paraphrase-multilingual-MiniLM-L12-v2 for RTX 3050 Ti 4GB
+
+# Embedding model
+model_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+model_type: "sentence_transformer"
+embedding_dim: 384  # MiniLM output dimension
+cache_embeddings: true  # cache to avoid recomputation
+embeddings_cache_dir: ".embeddings_cache"
+
+# Hardware constraints: RTX 3050 Ti 4GB
+# Semantic dedup MUST run on CPU to save VRAM for annotation
+device: "cpu"
+
+# Batch size for embedding generation (adjust for 4GB VRAM)
+embedding_batch_size: 32
+
+# Exact deduplication
+exact_dedup:
+  enabled: true
+  normalize: true  # lowercase, strip punctuation, whitespace
+  check_url: true
+  check_title: true
+  check_canonical: true  # extract og:url, rel=canonical
+
+# Semantic deduplication
+semantic_dedup:
+  enabled: true
+  similarity_metric: "cosine"
+  normalize_embeddings: true
+
+# Thresholds for cosine similarity
+thresholds:
+  auto_remove: 0.97      # >0.97: definitely duplicate, auto-remove
+  probable_dup: 0.92     # 0.92-0.97: probable duplicate, flag for review
+  review_candidate: 0.85 # 0.85-0.92: potential duplicate, human review
+  keep_threshold: 0.80   # <0.85: definitely different, keep
+
+# Deduplication strategy
+strategy:
+  # Process order: exact first, then semantic on remaining
+  exact_first: true
+  # If both exact and semantic enabled, exact takes precedence
+  exact_overrides_semantic: true
+  # Keep which version when duplicate found:
+  # - "first": keep first encountered
+  # - "latest": keep by publish_date (requires valid dates)
+  # - "longest": keep longest body_preview
+  keep_policy: "latest"
+
+# Logging
+log_removed_duplicates: true
+save_duplicate_pairs: true  # save pairs that were removed for audit
+
+# Source-specific overrides (optional)
+# source_overrides:
+#   kenh14:
+#     thresholds:
+#       auto_remove: 0.98  # more aggressive for high-volume sources

@@ -1,0 +1,55 @@
+# Python cache files
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+**/*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.coverage.*
+.cache/
+.mypy_cache/
+.pyright_cache/
+
+# Project caches
+.embeddings_cache/
+.hf_cache/
+
+# Local data & logs
+data/
+logs/
+.manifest/
+*.log
+*.jsonl
+*.csv
+*.parquet
+*.npz
+
+# IDE & system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+DxDiag.txt
+Slide.pdf
+project_improvement_plan.md
+
+# Agent & sensitive configurations
+.claude/
+.git/
+.gitignore
+Dockerfile
+.dockerignore
+pyproject.toml
+poetry.lock

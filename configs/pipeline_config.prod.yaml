@@ -1,0 +1,90 @@
+# Pipeline execution configuration - PRODUCTION ENV
+# Research-grade Vietnamese clickbait dataset construction
+
+# Retry settings for resilient crawling
+retry_count: 3
+request_timeout: 20  # seconds
+retry_backoff_factor: 2.0
+retry_status_codes: [429, 500, 502, 503, 504]
+
+# Batch processing
+batch_size: 16  # Production VRAM target: max batch_size = 16 (optimized for machine learning hosts)
+checkpoint_interval: 1000  # save checkpoint every N articles
+
+# Parallelism
+max_workers: 16  # concurrent requests (optimized for higher bandwidth)
+sleep_between_requests: 0.5  # seconds - slightly faster than dev but still polite
+
+# Quality control
+quality_threshold: 4  # minimum quality score (0-6) to pass validation
+
+# Paths (relative to project root)
+paths:
+  raw: data/raw
+  filtered: data/filtered
+  dedup: data/dedup
+  annotated: data/annotated
+  validated: data/validated
+  final: data/final
+  logs: logs
+  reports: reports
+
+# Crawler behavior
+crawl:
+  user_agent: "Mozilla/5.0 (compatible; ClickbaitDatasetBot/1.0)"
+  respect_robots_txt: true  # respect robots.txt (default enabled for ethical crawling)
+  max_articles_per_feed: 2000  # higher limit per RSS feed in production
+  sitemap_date_span_days: 365  # how far back to crawl from sitemaps
+
+# Rate limiting
+sleep_between_sources: 5.0  # seconds between different sources (more polite)
+
+# Crawl planning (smart allocation to avoid over-crawling)
+crawl_planning:
+  enabled: true
+  target_total: 24000  # global stop when existing records >= this (8 sources × 3000 = 24000 raw → ~9k final after dedup+filter)
+  source_threshold: 3000  # skip source if already >= this many records
+  low_source_threshold: 2000  # reduce crawl if between 2000-3000 records (give them priority to reach 3k)
+  reduce_factor: 0.8  # fraction of feeds to crawl in reduce mode (0.0-1.0) — aggressive to reach target
+
+# Deduplication
+dedup:
+  exact_normalize: true  # lowercase, strip punctuation, whitespace normalize
+  exact_dedup:
+    enabled: true
+    normalize: true
+    check_url: true
+    check_title: false
+    check_canonical: true
+  semantic_enabled: true
+  semantic_dedup:
+    enabled: true
+    similarity_metric: "cosine"
+    normalize_embeddings: true
+    keep_policy: "latest"
+  embedding_batch_size: 128  # optimized for GPU memory on production host
+  model_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  thresholds:
+    auto_remove: 0.97
+    probable_dup: 0.92
+    review_candidate: 0.85
+    keep_threshold: 0.85
+
+# Annotation
+annotation:
+  Ollama_host: "http://localhost:11434"
+  annotation_batch_size: 16
+  retry_failed_annotations: true
+  max_retries: 3
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "json"  # structured JSON logging
+  console: true
+  file: true
+
+# Validation
+validation:
+  stop_on_critical: true  # halt pipeline if critical validation fails
+  allow_force_export: true  # --force flag to override

@@ -1,0 +1,34 @@
+# Human Review Queue Configuration — Phase 6
+reviewer:
+  id: "huy"
+  display_name: "Huy"
+
+paths:
+  input_queue: "data/annotated/human_review_queue.jsonl"
+  enriched_queue: "data/review/enriched_queue.jsonl"
+  decisions: "data/review/decisions_huy.jsonl"
+  session_checkpoint: "data/review/session_checkpoint.json"
+  session_log: "data/review/session_log.jsonl"
+  final_reviewed: "data/annotated/final_reviewed.jsonl"
+  accepted_input: "data/annotated/final_annotated.jsonl"
+
+review:
+  checkpoint_interval: 10   # save every N records
+  batch_display_size: 50    # records per "page" display (no real batching)
+
+rubric:
+  criteria:
+    - id: C1
+      name: "Phóng đại cảm xúc"
+      description: "Lạm dụng từ ngữ kích động mạnh, thổi phồng cảm xúc cực đoan (Sensationalism)."
+    - id: C2
+      name: "Khoảng trống thông tin"
+      description: "Cố tình ẩn giấu thông tin cốt lõi bằng các câu lửng lơ hoặc đại từ vô định (Information Gap)."
+    - id: C3
+      name: "Định khung cú pháp"
+      description: "Sử dụng câu mệnh lệnh trực tiếp, áp đặt hành vi hoặc câu hỏi tu từ khiêu khích (Syntactic Framing)."
+    - id: C4
+      name: "Tính bất tương đồng"
+      description: "Nội dung tiêu đề mâu thuẫn, phóng đại hoặc không tìm thấy liên hệ nào trong thân bài/sapo (Incongruence)."
+  score_range: [0, 1, 2]
+  label_threshold: 4  # rubric_total >= 4 => clickbait (label=1)

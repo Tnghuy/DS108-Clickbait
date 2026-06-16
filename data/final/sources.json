@@ -1,0 +1,38 @@
+{
+  "afamily": {
+    "records": 1000,
+    "clickbait_count": 534,
+    "non_clickbait_count": 466,
+    "avg_quality": 5.98
+  },
+  "kenh14": {
+    "records": 1000,
+    "clickbait_count": 502,
+    "non_clickbait_count": 498,
+    "avg_quality": 5.99
+  },
+  "nhandan": {
+    "records": 1000,
+    "clickbait_count": 2,
+    "non_clickbait_count": 998,
+    "avg_quality": 5.88
+  },
+  "soha": {
+    "records": 1000,
+    "clickbait_count": 356,
+    "non_clickbait_count": 644,
+    "avg_quality": 5.98
+  },
+  "thanhnien": {
+    "records": 1000,
+    "clickbait_count": 49,
+    "non_clickbait_count": 951,
+    "avg_quality": 5.96
+  },
+  "tuoitre": {
+    "records": 1000,
+    "clickbait_count": 45,
+    "non_clickbait_count": 955,
+    "avg_quality": 5.99
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "total_records": 6000,
+  "label_distribution": {
+    "0": 4512,
+    "1": 1488
+  },
+  "source_distribution": {
+    "afamily": 1000,
+    "kenh14": 1000,
+    "nhandan": 1000,
+    "soha": 1000,
+    "thanhnien": 1000,
+    "tuoitre": 1000
+  },
+  "quality_threshold": 4,
+  "annotation_models": [
+    "qwen2.5:3b-instruct-q4_K_M",
+    "gemma2:2b-instruct-q4_K_M"
+  ],
+  "annotation_method": "rubric-based dual-model ensemble with human review",
+  "iaa": {
+    "cohens_kappa": 0.0598,
+    "cohens_kappa_ci": [
+      0.0541,
+      0.0669
+    ],
+    "cohens_kappa_interpretation": "Slight",
+    "observed_agreement": 0.3441,
+    "expected_agreement": 0.3024,
+    "n_samples": 5995,
+    "gwets_ac1": -0.276,
+    "krippendorff_alpha": -0.0845,
+    "fleiss_kappa": -0.2689,
+    "fleiss_n_raters": 3,
+    "breakdown": {
+      "by_source": {
+        "afamily": {
+          "kappa": 0.0484,
+          "n_samples": 999,
+          "observed_agreement": 0.2893,
+          "interpretation": "Slight",
+          "gwet_ac1": -0.4214
+        },
+        "kenh14": {
+          "kappa": 0.0488,
+          "n_samples": 1000,
+          "observed_agreement": 0.284,
+          "interpretation": "Slight",
+          "gwet_ac1": -0.4258
+        },
+        "nhandan": {
+          "kappa": 0.0012,
+          "n_samples": 999,
+          "observed_agreement": 0.6136,
+          "interpretation": "Slight",
+          "gwet_ac1": 0.4376
+        },
+        "soha": {
+          "kappa": 0.0369,
+          "n_samples": 999,
+          "observed_agreement": 0.2573,
+          "interpretation": "Slight",
+          "gwet_ac1": -0.4849
+        },
+        "thanhnien": {
+          "kappa": 0.0203,
+          "n_samples": 999,
+          "observed_agreement": 0.2943,
+          "interpretation": "Slight",
+          "gwet_ac1": -0.3528
+        },
+        "tuoitre": {
+          "kappa": 0.0338,
+          "n_samples": 999,
+          "observed_agreement": 0.3263,
+          "interpretation": "Slight",
+          "gwet_ac1": -0.2784
+        }
+      },
+      "by_class": {
+        "clickbait": {
+          "kappa": 0.015,
+          "n_samples": 1488,
+          "observed_agreement": 0.33,
+          "interpretation": "Slight"
+        },
+        "non_clickbait": {
+          "kappa": 0.0128,
+          "n_samples": 4507,
+          "observed_agreement": 0.3488,
+          "interpretation": "Slight"
+        }
+      },
+      "by_confidence": {
+        "<0.60": {
+          "kappa": 0.0441,
+          "n_samples": 2873,
+          "observed_agreement": 0.3759,
+          "interpretation": "Slight"
+        },
+        "0.60-0.74": {
+          "kappa": -0.0252,
+          "n_samples": 318,
+          "observed_agreement": 0.0409,
+          "interpretation": "Poor"
+        },
+        "0.75-0.89": {
+          "kappa": -0.0066,
+          "n_samples": 1465,
+          "observed_agreement": 0.0594,
+          "interpretation": "Poor"
+        },
+        "0.90+": {
+          "kappa": 0.3712,
+          "n_samples": 1339,
+          "observed_agreement": 0.6594,
+          "interpretation": "Fair"
+        }
+      }
+    },
+    "disagreement_analysis": {
+      "total_disagreements": 3932,
+      "disagreement_rate": 0.6559,
+      "resolved_by_human": 3512,
+      "both_models_wrong_vs_final": 0,
+      "samples": [
+        {
+          "id": "afamily_a7acfd2fba7b",
+          "source": "afamily",
+          "title": "1 bệnh viện ở Đà Nẵng khiến khách Tây thốt lên sau trải nghiệm: \"Tôi đã bị con gái lừa... nhưng đó là cú lừa vô cùng hạnh phúc\"",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.0,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_9dfa4167b2cd",
+          "source": "afamily",
+          "title": "70 tỷ cho biệt thự 270m2 của Tóc Tiên từng ở: Mức giá gây choáng đúng chuẩn \"địa thế\" khu đất thượng lưu ở TP.HCM",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 1.0,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_1cbc2ce9e7d9",
+          "source": "afamily",
+          "title": "Không chỉ đẹp: Những mẫu đồ bơi này còn cực kỳ",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.0,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_0ca00b8ca279",
+          "source": "afamily",
+          "title": "Họp lớp, lớp trưởng \"bay sạch\" 57 triệu đồng vì gửi nhầm tiền: Sáng hôm sau, cả nhóm đồng loạt làm một việc",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.0,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_eca34f10e67e",
+          "source": "afamily",
+          "title": "4 lời khuyên dành cho các gia đình đang trồng cây hạnh phúc",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.0,
+          "model_b_confidence": 0.8,
+          "final_label": 0,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_93bbd13a998c",
+          "source": "afamily",
+          "title": "Hương Giang chính thức lên tiếng vụ fan chi gần 100 triệu đồng để vote nhưng vẫn bị ngó lơ, không mời dự tiệc",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_40f6cd82d503",
+          "source": "afamily",
+          "title": "NSƯT nghèo đến nỗi phải ăn lá cây: Giờ là phó chủ tịch ở biệt thự giữa quận 7, showbiz ai cũng phải kính nể",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.0,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_2a2ad3a977c7",
+          "source": "afamily",
+          "title": "Vừa truyền máu vừa ôm con, mẹ đơn thân 3 con vượt bệnh hiểm để thực hiện ước mơ",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.9,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_a395b1633c64",
+          "source": "afamily",
+          "title": "\"Đánh liều\" gửi email cho Tổng thống, nam sinh TP.HCM nhận được kết quả bất ngờ sau 5 tiếng: Hành trình sau đó quá đáng nể!",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_e3e5bc90e01d",
+          "source": "afamily",
+          "title": "Thạc sĩ đại học top 1 bỏ công việc \"trong mơ\" đi làm nghề phun chân mày, nay kiếm gần 390 triệu đồng/tháng",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.85,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_2960b9593f38",
+          "source": "afamily",
+          "title": "Gia Lai: Nam sinh viên tử vong khi tắm suối tại Khu du lịch sinh thái Hầm Hô",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 1.0,
+          "model_b_confidence": 0.8,
+          "final_label": 0,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_fbc2ea7a8567",
+          "source": "afamily",
+          "title": "Mỹ nhân nóng bóng trở lại sau 12 năm \"mất tích\" khỏi showbiz, nhìn hình ảnh hiện tại ai cũng bất ngờ",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_5a700e3514af",
+          "source": "afamily",
+          "title": "Làm rõ thông tin 'đĩa cơm vỉa hè giá 100.000 đồng' ở Huế",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 1.0,
+          "model_b_confidence": 0.8,
+          "final_label": 0,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_db07702f2ff4",
+          "source": "afamily",
+          "title": "Một tháng ở viện dưỡng lão tốn bao nhiêu tiền? U50 cần chuẩn bị ngay",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 1.0,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_c8eb71828d55",
+          "source": "afamily",
+          "title": "HUFLIT xét học bạ nhận học bổng từ 15/4: Chủ động chọn tương lai, chinh phục ước mơ đại học",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.95,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_fdcb83801f07",
+          "source": "afamily",
+          "title": "Hình ảnh Xoài Non mới nhất: \"Nó Tâm Tít mà nó Lisa\"",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_6893e7cc1a25",
+          "source": "afamily",
+          "title": "Sau vụ nghi ngộ độc thực phẩm ở Trường Tiểu học Đặng Thùy Trâm, hơn 5.000 học sinh ở TP.HCM dừng ăn bán trú",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_d4207293e55f",
+          "source": "afamily",
+          "title": "Khẩu khai chiêu họa, lời ra thành vạ: 3 con giáp cẩn thận đón thị phi trong tháng 6",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_e3fcaf31455d",
+          "source": "afamily",
+          "title": "Hoa hậu Việt từng là nữ hoàng ảnh lịch, rời showbiz sống bí ẩn suốt 30 năm",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.9,
+          "final_label": 1,
+          "status": "accepted"
+        },
+        {
+          "id": "afamily_e9dbfb23cc1a",
+          "source": "afamily",
+          "title": "30 năm trước của dàn tiếp viên hàng không, hoa hậu, hoa khôi nổi tiếng Việt Nam: Mẹ mỹ nhân, sinh ra con cực phẩm!",
+          "model_a_label": 0.0,
+          "model_b_label": 1.0,
+          "model_a_confidence": 0.8,
+          "model_b_confidence": 0.8,
+          "final_label": 1,
+          "status": "accepted"
+        }
+      ]
+    },
+    "human_vs_llm": {
+      "model_a": {
+        "kappa": 0.078,
+        "n_samples": 3963,
+        "observed_agreement": 0.7557,
+        "interpretation": "Slight"
+      },
+      "model_b": {
+        "kappa": 0.0228,
+        "n_samples": 3963,
+        "observed_agreement": 0.3,
+        "interpretation": "Slight"
+      }
+    },
+    "warnings": [
+      "Low Cohen's Kappa (0.0598 < 0.60) - substantial agreement threshold failed."
+    ],
+    "passes_threshold": false
+  },
+  "sources": [
+    "afamily",
+    "kenh14",
+    "nhandan",
+    "soha",
+    "thanhnien",
+    "tuoitre"
+  ],
+  "date_range": {
+    "first_crawl": "2026-06-05T08:36:34.363453+00:00",
+    "last_crawl": "2026-06-05T08:39:37.168790+00:00"
+  },
+  "fields": [
+    "id",
+    "title",
+    "sapo",
+    "body_preview",
+    "url",
+    "source",
+    "source_category",
+    "publish_date",
+    "crawl_timestamp",
+    "final_label",
+    "confidence",
+    "status",
+    "rubric_total",
+    "model_a_label",
+    "model_b_label",
+    "model_a_rubric_scores",
+    "model_b_rubric_scores",
+    "quality_score",
+    "quality_breakdown",
+    "human_verified",
+    "human_label",
+    "crawl_method",
+    "feed_type",
+    "extraction_success"
+  ]
+}

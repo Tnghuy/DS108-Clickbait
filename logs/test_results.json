@@ -1,0 +1,72 @@
+[
+  {
+    "test": "URL uniqueness",
+    "passed": true,
+    "critical": true,
+    "message": "0 duplicate URL(s) found",
+    "status": "PASS"
+  },
+  {
+    "test": "Label validity",
+    "passed": true,
+    "critical": true,
+    "message": "0 invalid labels, 0 None label(s) (of 6000 finalized)",
+    "status": "PASS"
+  },
+  {
+    "test": "No nulls in required fields",
+    "passed": true,
+    "critical": true,
+    "message": "Null counts: {'title': 0, 'source': 0, 'url': 0, 'final_label': 0, 'quality_score': 0}",
+    "status": "PASS"
+  },
+  {
+    "test": "Quality score >= 4",
+    "passed": true,
+    "critical": false,
+    "message": "0/6000 records below threshold (>=4), 0.0%",
+    "status": "PASS"
+  },
+  {
+    "test": "Source balance (8-20%)",
+    "passed": true,
+    "critical": false,
+    "message": "Source distribution: {'afamily': '16.7%', 'kenh14': '16.7%', 'nhandan': '16.7%', 'soha': '16.7%', 'thanhnien': '16.7%', 'tuoitre': '16.7%'}",
+    "status": "PASS"
+  },
+  {
+    "test": "Class balance (45-55%)",
+    "passed": false,
+    "critical": false,
+    "message": "Class distribution: {0: '75.2%', 1: '24.8%'}",
+    "status": "WARN"
+  },
+  {
+    "test": "Confidence score range [0,1]",
+    "passed": true,
+    "critical": false,
+    "message": "0 score(s) out of [0, 1] range",
+    "status": "PASS"
+  },
+  {
+    "test": "UTF-8 encoding",
+    "passed": true,
+    "critical": false,
+    "message": "0 encoding issue(s) in ['title', 'sapo', 'body_preview']",
+    "status": "PASS"
+  },
+  {
+    "test": "Valid timestamps",
+    "passed": true,
+    "critical": false,
+    "message": "Null: 0, Future: 0, Pre-2020: 0",
+    "status": "PASS"
+  },
+  {
+    "test": "Body preview >= 50 chars",
+    "passed": true,
+    "critical": false,
+    "message": "0 record(s) with body_preview < 50 chars",
+    "status": "PASS"
+  }
+]

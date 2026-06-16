@@ -1,0 +1,45 @@
+# Annotation Pipeline Configuration — Phase 5
+# Strategy: Dual-Local Independent Annotation (Qwen 2.5 3B + Gemma 2 2B via Ollama)
+# Voting: Rubric-based scoring (0-8 scale) with direction agreement + borderline handling
+# NOTE: Sequential processing — only 1 model in VRAM at a time (4GB budget)
+# HW: RTX 3050 Ti 4GB, 8GB RAM, Ollama with num_ctx=2048, num_batch=256
+
+models:
+  model_a:
+    id: "qwen2.5:3b-instruct-q4_K_M"
+    provider: "ollama"
+    endpoint: "http://localhost:11434"
+    options:
+      num_ctx: 2048
+      num_gpu: 1  # 4GB VRAM max
+      num_batch: 256
+      temperature: 0.1
+      timeout: 240
+
+  model_b:
+    id: "gemma2:2b-instruct-q4_K_M"
+    provider: "ollama"
+    endpoint: "http://localhost:11434"
+    options:
+      num_ctx: 2048
+      num_gpu: 1  # 4GB VRAM max
+      num_batch: 256
+      temperature: 0.1
+      timeout: 240
+
+sampling:
+  samples_per_source: 1000
+  seed: 42
+
+voting:
+  confidence_fallback: 0.6
+
+concurrency: 1
+
+paths:
+  input_file: "data/dedup/final_deduped.jsonl"
+  output_accepted: "data/annotated/final_annotated.jsonl"
+  output_review: "data/annotated/human_review_queue.jsonl"
+  prompts:
+    model_a: "prompts/annotation_qwen.txt"
+    model_b: "prompts/annotation_gemma.txt"

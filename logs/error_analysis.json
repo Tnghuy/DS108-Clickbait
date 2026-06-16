@@ -1,0 +1,86 @@
+{
+  "false_positives": [
+    {
+      "id": "afamily_76001bd6db92",
+      "title": "Đẹp - Cẩm nang làm đẹp của phụ nữ hiện đại",
+      "sapo": "Từ khóa liên quan đến việc Lưu Diệc Phi \"tự cắt tóc\" nhanh chóng leo lên hot search, tạo nên cuộc thảo luận sôi nổi trên mạng xã hội.",
+      "source": "afamily",
+      "final_label": 0,
+      "prediction": 1
+    },
+    {
+      "id": "afamily_4113716f1b25",
+      "title": "5 con giáp gặp vía đỏ, hái lộc trời cho ngày 5/6",
+      "sapo": "Ngày thứ Sáu 5/6/2026 rơi vào thời điểm chuyển giao năng lượng giữa tuần làm việc và những ngày nghỉ ngơi, khoảng thời gian thường mang lại không ít bất ngờ thú vị. Theo góc nhìn tử vi, có 5 con giáp sẽ được hưởng trọn nguồn năng lượng tích cực này, mở ra cơ hội tài chính, sự nghiệp và cả những niềm vui nho nhỏ trong gia đình. Điều thú vị là vận may lần này không đến theo kiểu rầm rộ ồn ào, mà len lỏi qua từng quyết định nhỏ, từng cuộc gặp gỡ tưởng chừng bình thường, ai biết nhận ra sẽ giữ được phần của mình.",
+      "source": "afamily",
+      "final_label": 0,
+      "prediction": 1
+    },
+    {
+      "id": "afamily_c97e5940086e",
+      "title": "Đừng mặc định bật điều hòa 26 độ: EVN đưa lời khuyên điều chỉnh nhiệt độ phù hợp, tiết kiệm điện",
+      "sapo": "Mỗi mùa hè, điều hòa gần như trở thành thiết bị hoạt động liên tục trong nhiều gia đình. Và cũng như một thói quen đã ăn sâu từ nhiều năm nay, không ít người mặc định cài đặt nhiệt độ ở mức 26 độ C vì cho rằng đây là mức \"vừa mát vừa tiết kiệm điện\". Tuy nhiên, thực tế cho thấy không phải cứ bật điều hòa 26 độ là sẽ tiết kiệm điện. Nhiều gia đình duy trì mức nhiệt này suốt cả ngày nhưng hóa đơn tiền điện vẫn tăng vọt, trong khi có những nhà sử dụng điều hòa thường xuyên hơn nhưng chi phí điện năng lại thấp hơn đáng kể.",
+      "source": "afamily",
+      "final_label": 0,
+      "prediction": 1
+    },
+    {
+      "id": "afamily_183f8f381eb6",
+      "title": "Thượng úy Lê Hoàng Hiệp hiện tại",
+      "sapo": "Mới đây, ca sĩ Ngọc Linh chia sẻ khoảnh khắc hội ngộ cùng Thượng úy Lê Hoàng Hiệp tại đám hỏi của người quen chung. Dù chỉ là một bức ảnh đời thường giản dị, sự xuất hiện của nam quân nhân nhanh chóng thu hút sự chú ý từ cư dân mạng sau thời gian khá dài vắng bóng trên mạng xã hội.",
+      "source": "afamily",
+      "final_label": 0,
+      "prediction": 1
+    },
+    {
+      "id": "afamily_397deec81137",
+      "title": "Tin vui: Các nhà khoa học phát hiện cách dùng omega-3 để tiêu diệt tế bào ung thư",
+      "sapo": "Có lẽ bạn đã từng nghe nói rằng chế độ ăn Địa Trung Hải giàu cá và rau củ rất tốt cho tim mạch. Giờ đây, nghiên cứu mới cho thấy những thực phẩm này cũng có thể bảo vệ đại tràng bằng cách loại bỏ các tế bào bị tổn thương trước khi chúng có cơ hội chuyển thành ung thư. Quá trình đó được gọi là ferroptosis, và nó đã trở thành mục tiêu nghiên cứu của các nhà khoa học ung thư.",
+      "source": "afamily",
+      "final_label": 0,
+      "prediction": 1
+    }
+  ],
+  "false_negatives": [
+    {
+      "id": "afamily_2692931b1f1a",
+      "title": "Triệu tập thanh niên thả hai tay, để cháu bé hơn 1 tuổi cầm lái xe máy khi đổ đèo",
+      "sapo": "Trước đó, qua nắm tình hình trên không gian mạng, lực lượng chức năng phát hiện tài khoản Facebook \"Tub Phong\" đăng tải đoạn clip ghi lại cảnh một cháu bé đứng phía trước xe máy khi phương tiện đang xuống dốc với tốc độ cao.",
+      "source": "afamily",
+      "final_label": 1,
+      "prediction": 0
+    },
+    {
+      "id": "afamily_0d5977affcaf",
+      "title": "Ảnh hưởng của áp thấp nhiệt đới đầu tiên trên Biển Đông, cảnh báo về vùng nguy hiểm?",
+      "sapo": "Theo Trung tâm Dự báo khí tượng thủy văn quốc gia, hồi 13 giờ ngày 4-6, vị trí tâm áp thấp nhiệt đới ở vào khoảng 19,6 độ Vĩ Bắc; 117,8 độ Kinh Đông, trên vùng biển phía Đông khu vực Bắc Biển Đông, cách đặc khu Hoàng Sa khoảng 650 km về phía Đông Bắc.",
+      "source": "afamily",
+      "final_label": 1,
+      "prediction": 0
+    },
+    {
+      "id": "afamily_b6b4d14c2de3",
+      "title": "Bánh mì Việt Nam nổi tiếng toàn thế giới, có cả bài hát riêng mà vẫn bị Michelin ngó lơ?",
+      "sapo": "Lễ trao giải MICHELIN Guide 2026 vừa diễn ra tối 4/6 tại Hà Nội, chính thức công bố những gương mặt nổi bật nhất của bản đồ ẩm thực Việt Nam trong năm nay. Theo kết quả được công bố, MICHELIN Guide Việt Nam 2026 ghi nhận: 11 nhà hàng đạt một Sao MICHELIN (trong đó có 2 nhà hàng mới); 72 cơ sở ăn uống đạt Bib Gourmand (11 địa điểm mới); 3 nhà hàng đạt Sao Xanh MICHELIN (1 địa điểm mới); 110 địa điểm được tuyển chọn trong danh sách MICHELIN Selected (9 địa điểm mới).",
+      "source": "afamily",
+      "final_label": 1,
+      "prediction": 0
+    },
+    {
+      "id": "kenh14_8bc65260db40",
+      "title": "“Vợ bác sĩ Chiêm Quốc Thái là ai?” - câu hỏi lên hot search ngay lúc này",
+      "sapo": "Đây là câu hỏi đang được nhiều người gõ vào thanh tìm kiếm.",
+      "source": "kenh14",
+      "final_label": 1,
+      "prediction": 0
+    },
+    {
+      "id": "kenh14_396b62669ae0",
+      "title": "Chó nuôi phát bệnh dại, cắn 5 người hàng xóm rồi lăn ra chết",
+      "sapo": "Sau khi cắn, cào trúng 5 người hàng xóm, con chó của một hộ dân ở xã Mậu Thạch (Nghệ An) lăn ra chết. Sau vụ việc, chính quyền địa phương đã triển khai tiêm vaccine phòng dại cho các nạn nhân đảm bảo an toàn.",
+      "source": "kenh14",
+      "final_label": 1,
+      "prediction": 0
+    }
+  ]
+}

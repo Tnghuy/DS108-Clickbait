@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+.env
+.manifest/
+notebooks/.ipynb_checkpoints/
+.cache/
+.hf_cache/
+
+# Model caches (Ollama, sentence-transformers)
+~/.cache/ollama
+~/.cache/torch
+~/.cache/huggingface
+.embeddings_cache/
+
+# Checkpoint files
+*.checkpoint.json
+manifest.json
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+tox/
+.mypy_cache/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Claude Code local config (sensitive permission rules)
+
+.claude/
+
+# Exclude local scratch workspace (prevents committing large temporary txt files)
+scratch/
