@@ -6,18 +6,15 @@
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Docker Support](https://img.shields.io/badge/Docker-Supported-blue)](https://www.docker.com/)
 
-Kho lưu trữ này chứa một pipeline nghiên cứu và kỹ nghệ dữ liệu hoàn chỉnh, phục vụ bài toán xây dựng bộ dữ liệu phát hiện tiêu đề báo điện tử clickbait tiếng Việt quy mô **6.000 mẫu tin tức**. Bộ dữ liệu được thu thập từ 6 trang báo điện tử phổ biến tại Việt Nam và được gán nhãn thông qua nhóm mô hình ngôn ngữ lớn (LLM) song hành chạy local (Qwen 2.5 3B + Gemma 2 2B) kết hợp chấm điểm theo tiêu chí rubric 4 chiều và sự kiểm duyệt nghiêm ngặt của con người (Human-in-the-loop).
+Kho lưu trữ này chứa một pipeline xây dựng hoàn chỉnh, phục vụ bài toán xây dựng bộ dữ liệu phát hiện tiêu đề báo điện tử clickbait tiếng Việt quy mô **6.000 mẫu tin tức**. Bộ dữ liệu được thu thập từ 6 trang báo điện tử phổ biến tại Việt Nam và được gán nhãn thông qua nhóm mô hình ngôn ngữ lớn (LLM) song hành chạy local (Qwen 2.5 3B + Gemma 2 2B) kết hợp chấm điểm theo tiêu chí rubric 4 chiều và sự kiểm duyệt nghiêm ngặt của con người (Human-in-the-loop).
 
 ---
 
-## 1. Động lực & Vấn đề Nghiên cứu
+## 1. Động lực
 
-Tin giật gân (clickbait) trực tuyến hiện là một vấn đề nhức nhối trên các báo điện tử Việt Nam. Clickbait bóp méo thông tin, gây nhiễu loạn truyền thông và làm giảm nghiêm trọng trải nghiệm của độc giả. Mặc dù bài toán phát hiện clickbait đã được nghiên cứu rộng rãi trên thế giới, việc áp dụng tại Việt Nam vẫn gặp hai rào cản lớn:
+Tin giật gân (clickbait) trực tuyến hiện là một vấn đề nhức nhối trên các báo điện tử Việt Nam. Clickbait bóp méo thông tin, gây nhiễu loạn truyền thông và làm giảm nghiêm trọng trải nghiệm của độc giả. Mặc dù bài toán phát hiện clickbait đã được nghiên cứu rộng rãi trên thế giới, việc áp dụng tại Việt Nam vẫn gặp rào cản lớn: **Đặc thù ngôn ngữ Việt:** Tiếng Việt có tính ẩn ý cao, sử dụng từ ngữ đa nghĩa, chơi chữ và cấu trúc ngữ pháp biến đổi linh hoạt, đòi hỏi các mô hình phải có khả năng hiểu ngữ cảnh sâu sắc thay vì chỉ dựa vào các từ khóa giật gân thô.
 
-1. **Sự thiếu hụt dữ liệu chuẩn hóa:** Chưa có bộ dữ liệu clickbait tiếng Việt quy mô lớn, được dán nhãn theo phương pháp khoa học minh bạch và công bố công khai cho mục đích nghiên cứu học thuật.
-2. **Đặc thù ngôn ngữ Việt:** Tiếng Việt có tính ẩn ý cao, sử dụng từ ngữ đa nghĩa, chơi chữ và cấu trúc ngữ pháp biến đổi linh hoạt, đòi hỏi các mô hình phải có khả năng hiểu ngữ cảnh sâu sắc thay vì chỉ dựa vào các từ khóa giật gân thô.
-
-Dự án này được thiết lập nhằm xây dựng một pipeline kỹ nghệ dữ liệu đạt chuẩn công nghiệp và phát hành bộ dữ liệu clickbait tiếng Việt chất lượng cao đầu tiên cung cấp chi tiết điểm số rubric đa tiêu chí cho cộng đồng nghiên cứu mã nguồn mở.
+Dự án này được thiết lập nhằm xây dựng một pipeline hoàn chỉnh và phát hành bộ dữ liệu clickbait tiếng Việt chất lượng cao đầu tiên cung cấp chi tiết điểm số rubric đa tiêu chí cho cộng đồng nghiên cứu mã nguồn mở.
 
 ---
 
